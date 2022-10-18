@@ -104,7 +104,7 @@ float find_largest_element(float *arr, size_t length) {
 int pnpoly(int number_of_vertices, float *vertx, float *verty, float test_x,
            float test_y) {
   int i, j = 0;
-  int is_number_crossed_edges_odd = 0;
+  unsigned int is_number_crossed_edges_odd = 0;
 
   for (i = 0, j = number_of_vertices - 1; i < number_of_vertices; j = i++) {
     if (((verty[i] > test_y) != (verty[j] > test_y)) &&
