@@ -101,14 +101,15 @@ float find_largest_element(float *arr, size_t length) {
   return max;
 }
 
-int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
+int pnpoly(int number_of_vertices, float *vertx, float *verty, float test_x,
+           float test_y) {
   int i, j = 0;
   int is_number_crossed_edges_odd = 0;
 
-  for (i = 0, j = nvert - 1; i < nvert; j = i++) {
-    if (((verty[i] > testy) != (verty[j] > testy)) &&
-        (testx <
-         (vertx[j] - vertx[i]) * (testy - verty[i]) / (verty[j] - verty[i]) +
+  for (i = 0, j = number_of_vertices - 1; i < number_of_vertices; j = i++) {
+    if (((verty[i] > test_y) != (verty[j] > test_y)) &&
+        (test_x <
+         (vertx[j] - vertx[i]) * (test_y - verty[i]) / (verty[j] - verty[i]) +
              vertx[i])) {
       is_number_crossed_edges_odd = !is_number_crossed_edges_odd;
     }
